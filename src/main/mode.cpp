@@ -1,4 +1,7 @@
+#ifndef mainModeModule
+#define mainModeModule
 #include<iostream>
+#include"math.cpp"
 using namespace std;
 namespace mode{
     void round(){
@@ -28,3 +31,4 @@ namespace mode{
         cout<<"Round mode is left."<<endl;
     }
 }
+#endif
