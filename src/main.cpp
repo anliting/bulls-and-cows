@@ -17,7 +17,7 @@ int main(){
         }else if(s=="q"){
             state=1;
         }else if(s=="r"){
-            mode::round();
+            mode::round::main();
         }
     }
 }
