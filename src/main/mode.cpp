@@ -7,24 +7,33 @@
 using namespace std;
 namespace mode{
     namespace roundSpace{
-        void list_vector(int elementCount,int length,vector<int>&v){
+        void list_vector(
+            int elementCount,
+            int length,
+            vector<char>&v,
+            vector<vector<char>>&out
+        ){
             if(v.size()==length){
-                for(int i=0;i<v.size();i++)
-                    cout<<v[i];
-                cout<<" ";
+                out.push_back(v);
                 return;
             }
-            for(int i=0;i<elementCount;i++){
+            for(char i=0;i<elementCount;i++){
                 if(find(v.begin(),v.end(),i)!=v.end())
                     continue;
                 v.push_back(i);
-                list_vector(elementCount,length,v);
+                list_vector(elementCount,length,v,out);
                 v.pop_back();
             }
         }
         void list(int elementCount,int length){
-            vector<int>v;
-            list_vector(elementCount,length,v);
+            vector<char>v;
+            vector<vector<char>>res;
+            list_vector(elementCount,length,v,res);
+            for(int i=0;i<res.size();i++){
+                for(int j=0;j<length;j++)
+                    cout<<(int)res[i][j];
+                cout<<" ";
+            }
             cout<<endl;
         }
         void main(){
