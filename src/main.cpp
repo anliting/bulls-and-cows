@@ -20,7 +20,7 @@ namespace math{
         return f(m)/f(m-n);
     }
 }
-#include"main/mode"
+#include"main/mode.cpp"
 int main(){
     cout<<"Bulls and Cows"<<endl;
     cout<<"Input the command after the dollar sign ($). m for manual."<<endl;
